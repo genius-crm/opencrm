@@ -1,0 +1,56 @@
+jQuery(document).ready(function() {
+ Autofill();
+ 
+});
+
+function Autofill(){
+ alert ("test1");
+ if ((getUrlVar("Module")=="Accounts")&&(getUrlVar("view")=="Detail")) {
+  var related = getUrlVar("relatedModule");
+  //if (getUrlVar("relatedModule")=="Contacts") {
+  // var addButton = jQuery('.relatedHeader').find('button');
+  // console.log(addButton);
+  
+   jQuery.ajax({
+    dataType: 'text',
+
+    url: 'index.php?module=Autofill&action=AutofillAjax&file=AutofillAjax&do=load',
+    complete: function(response) {
+
+     alert (response.responseText);
+     if (response.responseText != 'undefined') {
+      var result = response.responseText;
+      var data = result.split("||");
+      //data[0] : phone
+      //data[1] : email
+      //data[2] : website
+      //data[3] : cf_805
+      alert ("data-url");
+      alert (data[0]);
+var spans = jQuery('.relatedHeader').find('button').eq(0);
+
+alert ("test49");
+//console.log (spans);
+    spans.each(function() {
+        var inputs = jQuery(this).find('button');
+         alert ("test50");
+        alert(inputs);
+        console.log (inputs);
+        inputs.each(function() {
+       $this.attr('data-url',$this.attr('data-url')+'&phone='+data[0]);
+    });
+});
+      //$('#addButton').attr('index.php?module=Contacts&view=Edit&sourceModule=Accounts&sourceRecord=31764&relationOperation=true&account_id=31764','provaa');
+      //alert (addButton.attr ('data-url'));
+      //addButton.attr('data-url',addButton.attr('data-url')+'&phone='+data[0]);
+    
+    }
+   }});
+  }
+ //}
+}
+
+function getUrlVar(key){
+    var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
+    return result && unescape(result[1]) || ""; 
+}

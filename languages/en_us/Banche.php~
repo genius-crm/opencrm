@@ -1,0 +1,78 @@
+<?php
+/* +********************************************************************************
+ * Terms & Conditions are placed on the: http://opensaas.pl
+ * *******************************************************************************
+ *  Module				: OSSCosts
+ *  Author				: OpenSaaS Sp. z o.o. 
+ *  Help/Email			: bok@opensaas.pl
+ *  Website				: www.opensaas.pl
+ * *******************************************************************************+ */
+$languageStrings = array(
+	// Basic Strings
+	'OSSCosts'        => 'Koszty',
+	'SINGLE_OSSCosts' => 'Koszt',
+	'LBL_ADD_RECORD' => 'Dodaj koszt',
+	'LBL_RECORDS_LIST' => 'Koszty',
+
+	// Blocks
+	'LBL_INFORMATION' => 'Informacje ogólne',
+	'LBL_ADDRESS_INFORMATION' => 'Informacje adresowe',
+
+	//Field Labels
+    'Title' => 'Temat',
+	'Costs_no' => 'Numer kosztu',
+	'Potential' => 'Szanse sprzedaży',
+	'Parent ID' => 'Nadrzędna faktura kosztowa',
+	'Project' => 'Projekt',
+	'HelpDesk' => 'Zgłoszenie',
+	'Related to' => 'Powiązany z',
+	'Street' => 'Ulica',
+	'Postal Code' => 'Kod poczty',
+	'City' => 'Miasto',
+	'Country' => 'Kraj',
+	'State' => 'Województwo',
+	'individual' => 'Indywidualny',
+	'group' => 'Grupowy',
+	'LBL_SHOW_HIERARCHY' => 'Hierarchia faktur kosztowych',
+	'Current state storage' => 'Aktualny stan magazynowy',
+	//Widget
+	'Summary of costs' => 'Podsumowanie kosztów',
+	'summary_count' => 'Ilość kosztów',
+	'summary_sum' => 'Suma kosztów',
+	'kol_count' => 'Konfiguracja',
+	'kol_count' => 'Konfiguracja',
+	//settings
+	'show_widgets_opportunities' => 'Pokaż podsumowanie kosztów w Szansie sprzedaży',
+	'show_widgets_helpdesk' => 'Pokaż podsumowanie kosztów w Zgłoszeń',
+	'show_widgets_project' => 'Pokaż podsumowanie kosztów w Projektów',
+	'restrict_opportunities' => 'Ograniczaj listę Szans sprzedaży tylko do wybranego kontrahenta',
+	'restrict_helpdesk' => 'Ograniczaj listę Zgłoszeń tylko do wybranego kontrahenta',
+	'restrict_project' => 'Ograniczaj listę Projektów tylko do wybranego kontrahenta',
+	'Alert_title' => 'Informacja',
+	'Alert_desc' => 'Wszystkie poniższe opcje modyfikują pliki systemowe. Przed nadpisaniem pliku jest robiona jego kopia zapasowa i po odznaczeniu zostają przewrócone oryginalne pliki.',
+	'Module configuration' => 'Konfiguracja modułu',
+	'JS_save_config_info' => 'Zapisano konfigurację',
+	//
+    'DELETE' => 'Usuwanie modułu',
+    'LBL_HELP_SETTINGS' => 'Pomoc',
+    'HelpDescription' => 'Pod poniższym adresem znajduje się strona internetowa na której będziesz miał możliwość dodawać Zgłoszenia Serwisowe, propozycje ulepszenia modułu lub po prostu zapoznać się z opisem działania modułu.',
+    'LBL_TroubleUrl' => 'Adres strony',
+    'LBL_OurWebsite' => 'Nasza strona',
+    'LBL_UrlLink' => 'http://projekty.opensaas.pl',
+    'LBL_UrlLinkInfo' => 'trzeba utworzyć konto',
+    'LBL_OurWebsiteLink' => 'http://opensaas.pl',
+    'Delete_panel' => 'Poniższy panel konfiguracyjny, jest przeznaczony do usunięcia modułu. Nazwa modułu: ',
+    'Uninstall' => 'Odinstaluj',
+    'Cancel' => 'Anuluj',
+    'MSG_DEL_WARN1' => 'UWAGA!',
+    'MSG_DEL_WARN2' => 'Po usunięciu modułu znikają wszelakie wpisy informujące CRM o tym że moduł działa nadal. Mogą pozostać jednakże pliki w katalogu:',
+    'MSG_DEL_PATH1' => ' Smarty/templates/modules/nazwa_modułu',
+    'MSG_DEL_PATH2' => ' modules/nazwa_modułu',
+    'MSG_DEL_WARN3' => ' oraz w katalogu:',
+    'MSG_DEL_WARN4' => 'Jeżeli będziesz chciał ponownie zainstalować moduł, niezbędne jest usunięcie tych katalogów.',
+    'MSG_DEL_WARN5' => 'W razie problemów skontaktuj się z nami poprzez email, lub zgłoszenie serwisowe na stronie www.opensaas.pl',
+    'MSG_DEL_WARN6' => 'Z wyrazami szacunku, ekipa OpenSaaS Sp. z o.o.',
+    'Uninstall OSSCosts module' => 'Usuń moduł OSSCosts',
+	
+	
+);

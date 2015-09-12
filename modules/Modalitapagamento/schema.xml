@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>green_modalitapagamento</name>
+			<sql><![CDATA[CREATE TABLE `green_modalitapagamento` (
+  `modalitapagamentoid` int(11) DEFAULT NULL,
+  `modalitapagamento` varchar(255) DEFAULT NULL,
+  `pagamento_no` varchar(100) DEFAULT NULL,
+  `modalita_attiva` varchar(3) DEFAULT NULL,
+  `dettagliopag` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>green_modalitapagamentocf</name>
+			<sql><![CDATA[CREATE TABLE `green_modalitapagamentocf` (
+  `modalitapagamentoid` int(11) NOT NULL,
+  PRIMARY KEY (`modalitapagamentoid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

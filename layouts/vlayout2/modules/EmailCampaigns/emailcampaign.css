@@ -1,0 +1,549 @@
+
+.blockOrganizer {
+    margin: 0 2%;
+}
+.marginTop3per {
+    margin-top: 3%;
+}
+.lightCream {
+    background-color: #eef6fe;
+}
+.subscriberBlock {
+    margin: 1px 0;
+    padding: 8px 0;
+}
+.subscriberBlock textarea {
+    height: 423px;
+    overflow-y: auto;
+    width: 99%;
+}
+.fieldWrapper {
+    border: 1px solid #ddd;
+    padding: 2%;
+}
+.width100Per {
+    width: 100%;
+}
+.listDate {
+    font-size: 0.8em;
+}
+.marginTopBottom2Per {
+    margin: 2% 0;
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0;
+}
+#verifyNow {
+    font-weight: bold;
+}
+.overflowScrollBlock {
+    max-height: 400px;
+    min-height: 300px;
+    overflow-y: auto;
+}
+.listTitle {
+    color: #000;
+    font-size: 1.2em;
+}
+.custom_plaintext span {
+    background-position: -5px -6px;
+    height: 16px;
+    width: 100px;
+}
+.breadcrumbContainer {
+    height: 60px;
+    padding-top: 30px;
+    width: 100%;
+}
+.planWidget {
+    background: linear-gradient(to bottom, #fff 0px, #fafafa 47%, #f4f4f4 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #999;
+    margin-right: 5px;
+    padding: 5px;
+    text-align: center;
+}
+#campaignRelatedBlock .table td {
+    line-height: 30px;
+}
+.border {
+    border: 1px solid #ddd;
+}
+.positionRel {
+    position: relative;
+}
+.marginTopBottom4px {
+    margin: 4px 0;
+}
+.hide-text {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+#editable {
+    min-height: 360px;
+    overflow: auto;
+}
+.schedule {
+    background: none repeat scroll 0 0 #eee;
+    border: 1px solid #ddd;
+    font-size: 1.2em;
+    line-height: 5px;
+    margin: 20px 115px;
+    padding: 0 6%;
+}
+.selectedTemplate {
+    border: 2px solid #1560bd !important;
+    border-radius: 4px;
+}
+.reportText {
+    color: #1560bd;
+    font-size: 1.6em;
+}
+.thumbnails > li {
+    float: left;
+    height: 200px !important;
+    margin: 0 0 18px 20px;
+}
+.thumbnails li {
+    padding: 1%;
+}
+.thumbnails li a.thumbnail:hover {
+    border-color: #06529e;
+}
+.listViewHeaderDiv {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f3f3f4;
+    background-image: -moz-linear-gradient(center top , #f6f6f6, #f3f3f4);
+    background-repeat: repeat-x;
+    border-collapse: separate;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #888;
+    font-weight: bold;
+    padding: 1%;
+    text-shadow: none !important;
+}
+.detailViewLabelBlock {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.templateName {
+    height: 40px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.templateName > p {
+    bottom: 0;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    max-height: 40px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.contents {
+    padding: 10px;
+}
+.starWrapper {
+    position: relative;
+    top: 3px;
+}
+#reportBlock1 {
+    margin: 3%;
+}
+#mergeTags {
+    background: none repeat scroll 0 0 whitesmoke;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 96%;
+}
+#mergeTags th {
+    color: black;
+}
+.marginAuto {
+    margin: auto;
+}
+.borderRadius5px {
+    border-radius: 5px;
+}
+.campaignsMenu {
+    font-size: 1.1em;
+    font-weight: bold;
+    min-width: 100px;
+    padding-left: 5px;
+    padding-top: 5%;
+}
+.campaignTitle {
+    font-size: 1.2em;
+    margin-top: 2%;
+}
+.campaignTitle a {
+    color: #000;
+}
+.thumbnail:hover {
+    border: 1px solid #1560bd;
+}
+.paddingTopBottom5per {
+    padding: 5% 0;
+}
+#chkwr {
+    border: 2px solid #427cc6;
+    border-radius: 3px;
+    display: inline-block;
+    height: 13px;
+    padding: 0;
+    width: 13px;
+}
+.reportValueBig {
+    color: #1560bd;
+    font-size: 3em;
+}
+.marginTopBottom8px {
+    margin: 8px 0;
+}
+#previewContainer {
+    background: none repeat scroll 0 0 #fff;
+}
+.noRecordsFound {
+    font-size: 1.5em;
+    padding: 10% 32%;
+}
+.billBodyBlock {
+    font-size: 0.8em;
+    margin: 17px 0;
+}
+.reportTitleBig {
+    font-size: 1.2em;
+}
+.themeColor {
+    color: #1560bd;
+}
+.margin2Per {
+    margin: 2%;
+}
+#emptyContainer {
+    border: 1px solid #ddd;
+    height: 191px;
+    padding-left: 253px;
+    padding-top: 113px;
+}
+.clearfix {
+}
+.pinkColor {
+    color: #aa3434;
+    font-weight: bold;
+}
+.lineHeight {
+    font-weight: bold;
+    line-height: 42px;
+    width: 99%;
+}
+.wizardButtons {
+    font-size: 1.2em;
+    margin: 10px 5px 0;
+}
+.marginTop20px {
+    margin-top: 20px;
+}
+.cancelTextColor {
+    color: #bd6262;
+}
+.paddingTopBottom11px {
+    padding: 11px 0;
+}
+.fontSize1_2em {
+    font-size: 1.2em;
+}
+.segmentButton {
+    margin: 5px 0 0 !important;
+}
+#subscriberListSearch, #subscriberSearch {
+    padding-left: 20px;
+}
+li.step a:focus {
+    outline: 0 none;
+}
+.whiteBackground {
+    background: none repeat scroll 0 0 #fff;
+}
+.listWrapper:hover .actionImages {
+    opacity: 1;
+}
+.listWrapper .actionImages {
+    opacity: 0;
+}
+.header {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.info-text {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.marginTop10px {
+    margin-top: 10px;
+}
+.imgbackRegularCampaign {
+    background-image: url("../images/regular.PNG");
+    background-position: 0 -38px;
+    height: 20px;
+    width: 32px;
+}
+.imgbackScheduledCampaign {
+    background-image: url("../images/scheduledCampaign.PNG");
+    background-position: 0 -38px;
+    height: 20px;
+    width: 32px;
+}
+.imgbackAutoResponderCampaign {
+    background-image: url("../images/AutoResponder.png");
+    background-position: 0 -38px;
+    height: 20px;
+    width: 32px;
+}
+.marginTop5Per {
+    margin-top: 5%;
+}
+.marginBottom20px {
+    margin-bottom: 20px;
+}
+.billTextColor {
+    color: #527b00;
+}
+.mergeContainer {
+    height: 200px;
+    position: absolute;
+    width: 97%;
+}
+.minWidth1200px {
+    min-width: 1200px;
+}
+.marginTop12px {
+    margin-top: 12px;
+}
+.paddingTopBottom1Per {
+    padding: 1% 0;
+}
+.codeArea {
+    height: 500px;
+    max-height: 500px;
+}
+.noRecordsFoundByType {
+    padding: 5% 33% !important;
+}
+.displayNone {
+    display: none;
+}
+.mergeBlock {
+    height: 200px;
+    position: absolute;
+    width: 900px;
+}
+.listViewFontColor {
+    color: #000;
+}
+#unsubscriberReport, #clickReport {
+    display: inline;
+}
+.borderGrey {
+    border-bottom: 1px solid #ddd;
+}
+.paddingLeft12Per {
+    padding-left: 12%;
+}
+.marginTop2Per {
+    margin-top: 2%;
+}
+.subscriberHeader {
+    margin-top: 1%;
+}
+.listWrapper {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 1px;
+    padding: 1%;
+}
+.marginTop1Per {
+    margin-top: 1%;
+}
+.filterBlock {
+    margin: 1% auto;
+    width: 80%;
+}
+.cke_combo_text {
+    color: #474747;
+    cursor: default;
+    float: left;
+    line-height: 26px;
+    overflow: hidden;
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    width: 75px;
+}
+.listHeader {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    padding-left: 4px;
+}
+.reportDiv {
+    padding: 0 3%;
+    text-align: center;
+}
+.anchorTextColor {
+    color: #1560bd;
+}
+.fontSize0_7em {
+    font-size: 0.7em;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.templateActions {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    margin-left: -4px;
+    padding: 4%;
+    position: absolute;
+    text-align: center;
+    width: 92%;
+}
+.templateActions i {
+    margin-right: 10px;
+}
+.reportValueSmall {
+    color: #1560bd;
+    font-size: 1.8em;
+}
+.radioBlock {
+    margin-top: 6px;
+}
+.blueText {
+    color: blue;
+    cursor: pointer;
+}
+.paddingTopBottom5Px {
+    padding: 5px 0;
+}
+#wizardContainer {
+    background: none repeat scroll 0 0 #fbfbfb;
+    box-sizing: border-box;
+    width: 98%;
+}
+#wizardContainer .wizardRight {
+    padding-right: 0;
+}
+#wizardContainer #EditView {
+    margin: 1%;
+}
+.marginLeftRight2Per {
+    margin: 0 2%;
+}
+#reportHeader {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+.textCenter {
+    text-align: center;
+}
+.paddingTopBottom3per {
+    padding: 3% 0;
+}
+.clearfix:after {
+    clear: both;
+}
+ul.nav-campaigns li {
+    background-color: #f3f3f4;
+    background-image: -moz-linear-gradient(center top , #f6f6f6, #f3f3f4);
+    background-repeat: repeat-x;
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    border-left-color: rgba(0, 0, 0, 0.1);
+    border-right-color: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #fff !important;
+    box-shadow: 0 0 0 1px #ddd;
+    margin-bottom: 5px;
+    margin-right: 0;
+    padding: 8px 0 9px 15px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+ul.nav-campaigns li a {
+    color: #888;
+    text-shadow: none;
+}
+ul.nav-campaigns li a:hover {
+    background: none repeat scroll 0 center transparent;
+    text-shadow: none;
+}
+ul.nav-campaigns li.active {
+    background-color: #10498f;
+    background-image: -moz-linear-gradient(center top , #10498f, #10498f);
+    background-repeat: repeat-x;
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    border-left-color: rgba(0, 0, 0, 0.1);
+    border-right-color: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #0b3161 !important;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+ul.nav-campaigns li.active a:after {
+    border-bottom: 18px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid #10498f;
+    border-top: 18px solid rgba(0, 0, 0, 0);
+    content: " ";
+    display: inline-block;
+    left: 100%;
+    position: absolute;
+    top: 0;
+}
+.nav-pills > li > a {
+    padding: 0;
+}
+ul.nav-campaigns li.active > a, ul.nav-campaigns li.active > a:hover {
+    background: none repeat scroll 0 center transparent;
+    border-radius: 2px;
+    color: #fff;
+}
+#unsubscribeImage {
+    height: 355px;
+    width: 257px;
+}
+.scheduleFieldsAlignment {
+    display: inline-block;
+    float: left;
+    margin: 20px;
+}
+.recipientsPopView {
+    max-height: 500px;
+    max-width: 900px;
+    min-width: 900px;
+    overflow: auto;
+}
+.suspensionFormTextArea {
+    height: 54px;
+    width: 651px;
+}
+.emptyNoRecordsFound {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 372px;
+    padding: 5% 0;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+}
+.list_carousel li p {
+    color: black;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
+}

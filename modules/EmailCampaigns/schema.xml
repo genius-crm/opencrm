@@ -1,0 +1,94 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_emailcampaigns</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_emailcampaigns` (
+  `emailcampaignsid` int(11) DEFAULT NULL,
+  `campaign_name` varchar(255) DEFAULT NULL,
+  `from_name` varchar(100) DEFAULT NULL,
+  `from_email` varchar(100) DEFAULT NULL,
+  `track_opens` varchar(3) DEFAULT NULL,
+  `track_clicks` varchar(3) DEFAULT NULL,
+  `track_bounces` varchar(3) DEFAULT NULL,
+  `track_complaints` varchar(3) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `module_name` varchar(255) DEFAULT NULL,
+  `conditions` text,
+  `subscribers_list` varchar(255) DEFAULT NULL,
+  `reply_to` varchar(255) DEFAULT NULL,
+  `batch` int(50) DEFAULT NULL,
+  `emailcamp_interval` varchar(255) DEFAULT NULL,
+  `related_recorts` text,
+  `unsubscribe_option` varchar(3) DEFAULT '0'
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaigns</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_emailcampaigns` ADD `parent_emailcampaignsid` VARCHAR( 50 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL AFTER `unsubscribe_option` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaigns</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_emailcampaigns` ADD `whopenemail` VARCHAR( 3 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 0 AFTER `parent_emailcampaignsid` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaigns</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_emailcampaigns` ADD `emailclicklink` VARCHAR( 3 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT 0 AFTER `whopenemail` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaigns</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_emailcampaigns` ADD `select_option` VARCHAR( 255 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL AFTER `emailclicklink` ;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaignscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_emailcampaignscf` (
+  `emailcampaignsid` int(11) NOT NULL,
+  PRIMARY KEY (`emailcampaignsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_scheduleemailcampagine</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_scheduleemailcampagine` (
+  `emailcampaignsid` int(50) NOT NULL,
+  `status` int(50) NOT NULL,
+  `next_trigger_time` datetime NOT NULL,
+  `send_email` int(19) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_scheduleemailcampagine</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_scheduleemailcampagine` ADD `batchrecord` INT(40) NOT NULL AFTER `send_email` ENGINE=InnoDB DEFAULT CHARSET=latin1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_link_tracker</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_link_tracker` (
+  `id` int(19) NOT NULL AUTO_INCREMENT,
+  `emailid` varchar(250) DEFAULT '',
+  `link` varchar(250) DEFAULT '',
+  `url` varchar(250) DEFAULT '',
+  `click` int(19) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcamp_sendemail</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_emailcamp_sendemail` (
+  `emailcampaignsid` int(11) NOT NULL,
+  `related_id` int(11) NOT NULL,
+  `activityid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaign_setting</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_emailcampaign_setting` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `batch` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailcampaign_setting</name>
+			<sql><![CDATA[INSERT IGNORE INTO `vtiger_emailcampaign_setting` (`id`, `batch`) VALUES (1, '200');]]></sql>
+		</table>
+	</tables>
+</schema>

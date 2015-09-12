@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_emailtrackingreport</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_emailtrackingreport` (
+  `emailtrackingreportid` int(11) DEFAULT NULL,
+  `emailtrackingreport1` varchar(100) DEFAULT NULL,
+  `parent_id` varchar(50) DEFAULT NULL,
+  `emailid` varchar(50) DEFAULT NULL,
+  `emailcampaignsid` varchar(50) DEFAULT NULL,
+  `email_open` varchar(50) DEFAULT NULL,
+  `email_click` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_emailtrackingreportcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_emailtrackingreportcf` (
+  `emailtrackingreportid` int(11) NOT NULL,
+  PRIMARY KEY (`emailtrackingreportid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

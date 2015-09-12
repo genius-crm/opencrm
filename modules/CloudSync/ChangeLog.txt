@@ -1,0 +1,26 @@
+*** 1.3 ***
+Option to create new widget in VtigerCRM modules which are related to Documents to Download files/share link from Dropbox and relate the Documents to Module
+User can select Documents attachment type in Settings page (Internal or External)
+User can select at which Documents folder, user wants to sync the VtigerCRM Documents to
+User can select at which Dropbox folder, user wants to sync the VtigerCRM Documents to
+User can sync Dropbox folder to vtigerCRM Documents
+Added Option to assign records to different user when creating Document using Dropbox file
+UI update
+Bug fix
+
+*** 1.2.1 ***
+Notifications added after sync
+Bug fix
+
+*** 1.2.0 ***
+Multiple Dropbox account to sync with vtigerCRM. Every crm user can sync with his own dropbox account
+
+*** 1.1.0 ***
+Added option to select files from dropbox and create new document record using selected file
+Now user can upload document to dropbox "on save" using vtiger workflow.
+Updated log module to show extra information
+Updated UI
+
+*** 1.0.0 ***
+Initial release
+

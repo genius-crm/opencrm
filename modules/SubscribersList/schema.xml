@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_subscriberslist</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_subscriberslist` (
+  `subscriberslistid` int(11) DEFAULT NULL,
+  `list_name` varchar(255) DEFAULT NULL,
+  `module_name` varchar(255) DEFAULT NULL,
+  `conditions` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_subscriberslistcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_subscriberslistcf` (
+  `subscriberslistid` int(11) NOT NULL,
+  PRIMARY KEY (`subscriberslistid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

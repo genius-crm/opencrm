@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>green_ddt</name>
+			<sql><![CDATA[CREATE TABLE `green_ddt` (
+  `ddtid` int(11) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `ddt_no` varchar(100) DEFAULT NULL,
+  `potential_id` varchar(100) DEFAULT NULL,
+  `ddtddtstage` varchar(100) DEFAULT NULL,
+  `datadoc` date DEFAULT NULL,
+  `contactid` varchar(255) DEFAULT NULL,
+  `trasporto` varchar(100) DEFAULT NULL,
+  `dataritiro` date DEFAULT NULL,
+  `vettore` varchar(255) DEFAULT NULL,
+  `subtotal` decimal(25,8) DEFAULT NULL,
+  `shipping` varchar(255) DEFAULT NULL,
+  `inventorymanager` varchar(100) DEFAULT NULL,
+  `adjustment` decimal(25,8) DEFAULT NULL,
+  `total` decimal(25,8) DEFAULT NULL,
+  `taxtype` varchar(100) DEFAULT NULL,
+  `s_h_amount` decimal(25,8) DEFAULT NULL,
+  `accountid` varchar(255) DEFAULT NULL,
+  `currency_id` varchar(255) DEFAULT NULL,
+  `conversion_rate` varchar(255) DEFAULT NULL,
+  `bill_street` varchar(255) DEFAULT NULL,
+  `ship_street` varchar(255) DEFAULT NULL,
+  `bill_city` varchar(255) DEFAULT NULL,
+  `ship_city` varchar(255) DEFAULT NULL,
+  `bill_state` varchar(255) DEFAULT NULL,
+  `ship_state` varchar(255) DEFAULT NULL,
+  `bill_code` varchar(255) DEFAULT NULL,
+  `ship_code` varchar(255) DEFAULT NULL,
+  `bill_country` varchar(255) DEFAULT NULL,
+  `ship_country` varchar(255) DEFAULT NULL,
+  `bill_pobox` varchar(255) DEFAULT NULL,
+  `ship_pobox` varchar(255) DEFAULT NULL,
+  `terms_conditions` varchar(255) DEFAULT NULL,
+  `pre_tax_total` decimal(25,8) DEFAULT NULL,
+  `s_h_percent` varchar(100) DEFAULT NULL,
+  `discount_percent` varchar(255) DEFAULT NULL,
+  `discount_amount` varchar(255) DEFAULT NULL,
+  `ddt_hour` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>green_ddtcf</name>
+			<sql><![CDATA[CREATE TABLE `green_ddtcf` (
+  `ddtid` int(11) NOT NULL,
+  PRIMARY KEY (`ddtid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

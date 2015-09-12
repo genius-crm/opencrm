@@ -1,0 +1,110 @@
+<?php
+
+/* * *******************************************************************************
+ * The content of this file is subject to the MYC Vtiger Customer Portal license.
+ * ("License"); You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is Proseguo s.l. - MakeYourCloud
+ * Portions created by Proseguo s.l. - MakeYourCloud are Copyright(C) Proseguo s.l. - MakeYourCloud
+ * All Rights Reserved.
+ * ****************************************************************************** */
+
+
+?>
+<script src="views/assets/jquery-chosen-sortable.min.js" type="text/javascript" charset="utf-8"></script> 
+<script src="views/assets/chosen.order.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+	   		<form role="form" method="post"  enctype="multipart/form-data">
+	   		
+	   		<div class="form-group col-md-9">	   		
+		   		<div class="checkbox" style="margin-top:0px;">
+					  <p><b>Enabled</b></p>
+					    <label>
+					      <input type="checkbox" value="true" name="settings[is_enabled]" <?php if($pluginsettings['config']['is_enabled']) echo "checked"?>> Check to enable this plugin for your Portal.
+					    </label>
+				</div>	   		
+	   		</div>
+	   		
+	   		<div class="form-group col-md-3">	
+	   			<label>License Status </label>		
+		   		<div class="alert alert-success text-center"><b>PAID - UNLIMITED</b></div>
+		   			   		
+	   		</div>
+	   		
+<?php foreach($pluginsettings['affectedmodules'] as $afmodule): ?>	
+		
+	   		<div class="col-md-12">
+	   		<hr>
+	   		<h4><?php echo $afmodule ?> <small>Settings</small></h4>
+	   		</div>
+	   		<div class="form-group col-md-2">
+	   		
+	   		<div class="checkbox" style="margin-top:0px;">
+				  <p><b>Enabled</b></p>
+				    <label>
+				      <input type="checkbox" value="true" name="settings[<?php echo $afmodule ?>][is_enabled]" <?php if($pluginsettings['config'][$afmodule]['is_enabled']) echo "checked"?>> Show Inventory Lines for <b><?php echo $afmodule ?></b> module.
+				    </label>
+			</div>
+	   		
+	   		</div>
+	   		
+	   		<div class="form-group col-md-10">
+												    <label for="enabled_fields">Fields to Display in the Inventory Block for <b><?php echo $afmodule ?> </b></label>
+												    <p class="help-block">Choose which filelds you would like to show for this module in the Inventory Block.</p>
+												    <select name="settings[<?php echo $afmodule ?>][fields][]" id="settings_<?php echo $afmodule ?>_fields" class="form-control chosen-select chzn-sortable" multiple>
+												    <?php foreach($pluginsettings['linemodules'] as $lmodule): ?>
+												    <option disabled>──────── <?php echo strtoupper($lmodule); ?> FIELDS ────────</option>
+												    	<?php foreach($pluginsettings['inventoryinfo'][$lmodule]['fieldslabels'] as $fieldname => $fieldlabel) {
+												    			$selected="";
+												    			if(in_array($fieldname, $pluginsettings['config'][$afmodule]['fields'])) $selected=" selected";
+												    			
+																
+					
+													    		echo "<option value='".$fieldname."' $selected>".$fieldlabel."</option>";
+													    		}
+												    	?>
+												    	<?php endforeach; ?>
+												    </select>
+												  </div>
+												  
+												  			<div class="clearfix"></div>
+	   	<?php endforeach; ?>
+	   	
+	   		
+	   		
+	
+	
+			   	
+			   	<div class="col-md-12" style="padding-bottom:50px;">
+			  <hr>
+					    
+					    <div class="row">
+					    <div class="col-md-12 text-center"><button type="submit" class="btn btn-success btn-lg">Save Configuration</button></div>
+						
+
+			   	</div>
+		   	</form>
+	   	</div>
+	   	</div>
+   	</div>
+   	
+   	<script>
+	   	
+
+
+
+$(function(){
+
+    $( ".chosen-select" ).chosen();
+	//$(".chosen-select").chosen({disable_search_threshold: 10}).chosenSortable();		
+
+    <?php foreach($pluginsettings['affectedmodules'] as $afmodule) if(isset($pluginsettings['config'][$afmodule]['fields'])) echo "var listFields".$afmodule." = ".json_encode($pluginsettings['config'][$afmodule]['fields']).";  ChosenOrder.setSelectionOrder($('#settings_".$afmodule."_fields'), listFields".$afmodule.");"; ?>
+    
+    $('.chosen-select').addClass('chzn-sortable').chosenSortable();
+    
+    	
+})
+
+
+	   	
+   	</script>

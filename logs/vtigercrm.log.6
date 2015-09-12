@@ -1,0 +1,339 @@
+Tue Sep  1 06:59:43 2015,982 [16199] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:43 2015,982 [16199] DEBUG user - Exiting Users() method ...
+Tue Sep  1 06:59:43 2015,985 [16199] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_tab
+Tue Sep  1 06:59:43 2015,992 [16199] DEBUG VT - Prepared sql query being executed : SELECT fieldname,modulename,tablename,entityidfield,entityidcolumn from vtiger_entityname
+Tue Sep  1 06:59:43 2015,998 [16199] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:43 2015,998 [16199] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:43 2015,998 [16199] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:43 2015,998 [16199] DEBUG VT - Prepared sql query parameters : [4]
+Tue Sep  1 06:59:44 2015,002 [16199] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,002 [16199] DEBUG VT - Prepared sql query being executed : SELECT vtiger_contactdetails.salutation AS vtiger_contactdetailssalutationtype,vtiger_contactdetails.firstname AS vtiger_contactdetailsfirstname,vtiger_contactdetails.contact_no AS vtiger_contactdetailscontact_no,vtiger_contactdetails.phone AS vtiger_contactdetailsphone,vtiger_contactdetails.lastname AS vtiger_contactdetailslastname,vtiger_contactdetails.mobile AS vtiger_contactdetailsmobile,vtiger_contactdetails.accountid AS vtiger_contactdetailsaccount_id,vtiger_contactsubdetails.homephone AS vtiger_contactsubdetailshomephone,vtiger_contactsubdetails.leadsource AS vtiger_contactsubdetailsleadsource,vtiger_contactsubdetails.birthday AS vtiger_contactsubdetailsbirthday,vtiger_contactdetails.email AS vtiger_contactdetailsemail,vtiger_contactdetails.reportsto AS vtiger_contactdetailscontact_id,vtiger_contactdetails.secondaryemail AS vtiger_contactdetailssecondaryemail,vtiger_contactdetails.donotcall AS vtiger_contactdetailsdonotcall,vtiger_contactdetails.emailoptout AS vtiger_contactdetailsemailoptout,vtiger_crmentity.smownerid AS vtiger_crmentityassigned_user_id,vtiger_contactdetails.notify_owner AS vtiger_contactdetailsnotify_owner,vtiger_crmentity.createdtime AS vtiger_crmentitycreatedtime,vtiger_crmentity.modifiedtime AS vtiger_crmentitymodifiedtime,vtiger_crmentity.modifiedby AS vtiger_crmentitymodifiedby,vtiger_customerdetails.portal AS vtiger_customerdetailsportal,vtiger_customerdetails.support_start_date AS vtiger_customerdetailssupport_start_date,vtiger_customerdetails.support_end_date AS vtiger_customerdetailssupport_end_date,vtiger_contactaddress.mailingstreet AS vtiger_contactaddressmailingstreet,vtiger_contactaddress.otherstreet AS vtiger_contactaddressotherstreet,vtiger_contactaddress.mailingcity AS vtiger_contactaddressmailingcity,vtiger_contactaddress.othercity AS vtiger_contactaddressothercity,vtiger_contactaddress.mailingstate AS vtiger_contactaddressmailingstate,vtiger_contactaddress.otherstate AS vtiger_contactaddressotherstate,vtiger_contactaddress.mailingzip AS vtiger_contactaddressmailingzip,vtiger_contactaddress.otherzip AS vtiger_contactaddressotherzip,vtiger_contactaddress.mailingcountry AS vtiger_contactaddressmailingcountry,vtiger_contactaddress.othercountry AS vtiger_contactaddressothercountry,vtiger_contactaddress.mailingpobox AS vtiger_contactaddressmailingpobox,vtiger_contactaddress.otherpobox AS vtiger_contactaddressotherpobox,vtiger_contactdetails.imagename AS vtiger_contactdetailsimagename,vtiger_crmentity.description AS vtiger_crmentitydescription,vtiger_contactdetails.modalitapagamento AS vtiger_contactdetailsmodalitapagamento,vtiger_contactdetails.banca AS vtiger_contactdetailsbanca,vtiger_contactdetails.isconvertedfromlead AS vtiger_contactdetailsisconvertedfromlead,vtiger_crmentity.smcreatorid AS vtiger_crmentitycreated_user_id,vtiger_contactdetails.emailcampaign_optout AS vtiger_contactdetailsemailcampaign_optout,vtiger_crmentity.deleted FROM  vtiger_crmentity LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactsubdetails ON vtiger_contactsubdetails.contactsubscriptionid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactscf ON vtiger_contactscf.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_customerdetails ON vtiger_customerdetails.customerid=vtiger_crmentity.crmid WHERE  vtiger_crmentity.crmid=?  LIMIT 1
+Tue Sep  1 06:59:44 2015,002 [16199] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,005 [16199] DEBUG VT - Prepared sql query being executed : SELECT vtiger_relatedlists.*,vtiger_tab.name as modulename FROM vtiger_relatedlists
+					INNER JOIN vtiger_tab on vtiger_tab.tabid = vtiger_relatedlists.related_tabid AND vtiger_tab.presence != 1
+					WHERE vtiger_relatedlists.tabid = ? AND related_tabid = ?
+Tue Sep  1 06:59:44 2015,005 [16199] DEBUG VT - Prepared sql query parameters : [4,9]
+Tue Sep  1 06:59:44 2015,005 [16199] DEBUG VT - Entering getColumnFields(Calendar) method ...
+Tue Sep  1 06:59:44 2015,006 [16199] DEBUG VT - in getColumnFields Calendar
+Tue Sep  1 06:59:44 2015,006 [16199] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?,?)
+Tue Sep  1 06:59:44 2015,006 [16199] DEBUG VT - Prepared sql query parameters : [9,16]
+Tue Sep  1 06:59:44 2015,009 [16199] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,010 [16199] DEBUG VT - Prepared sql query being executed : SELECT COUNT(DISTINCT vtiger_crmentity.crmid) AS count FROM vtiger_activity INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_activity.activityid INNER JOIN vtiger_cntactivityrel ON vtiger_cntactivityrel.activityid = vtiger_activity.activityid LEFT JOIN vtiger_seactivityrel ON vtiger_seactivityrel.activityid = vtiger_activity.activityid LEFT JOIN vtiger_users ON vtiger_users.id = vtiger_crmentity.smownerid LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid WHERE vtiger_cntactivityrel.contactid = 8 AND vtiger_crmentity.deleted = 0 AND vtiger_activity.activitytype <> 'Emails'
+Tue Sep  1 06:59:44 2015,305 [16206] INFO VT - PearDatabase ->ADODB disconnect
+Tue Sep  1 06:59:44 2015,305 [16207] INFO VT - PearDatabase ->ADODB disconnect
+Tue Sep  1 06:59:44 2015,310 [16205] INFO VT - PearDatabase ->ADODB disconnect
+Tue Sep  1 06:59:44 2015,310 [16208] INFO VT - PearDatabase ->ADODB disconnect
+Tue Sep  1 06:59:44 2015,449 [16207] DEBUG user - Entering Users() method ...
+Tue Sep  1 06:59:44 2015,449 [16207] DEBUG VT - Entering getColumnFields(Users) method ...
+Tue Sep  1 06:59:44 2015,449 [16207] DEBUG VT - in getColumnFields Users
+Tue Sep  1 06:59:44 2015,449 [16207] DEBUG VT - Prepared sql query being executed : SELECT tabid, name, ownedby FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,453 [16207] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,453 [16207] DEBUG VT - Prepared sql query parameters : [29]
+Tue Sep  1 06:59:44 2015,458 [16207] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,458 [16207] DEBUG user - Exiting Users() method ...
+Tue Sep  1 06:59:44 2015,461 [16207] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,468 [16207] DEBUG VT - Prepared sql query being executed : SELECT fieldname,modulename,tablename,entityidfield,entityidcolumn from vtiger_entityname
+Tue Sep  1 06:59:44 2015,474 [16207] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,474 [16207] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,474 [16207] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,474 [16207] DEBUG VT - Prepared sql query parameters : [4]
+Tue Sep  1 06:59:44 2015,478 [16207] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,478 [16207] DEBUG VT - Prepared sql query being executed : SELECT vtiger_contactdetails.salutation AS vtiger_contactdetailssalutationtype,vtiger_contactdetails.firstname AS vtiger_contactdetailsfirstname,vtiger_contactdetails.contact_no AS vtiger_contactdetailscontact_no,vtiger_contactdetails.phone AS vtiger_contactdetailsphone,vtiger_contactdetails.lastname AS vtiger_contactdetailslastname,vtiger_contactdetails.mobile AS vtiger_contactdetailsmobile,vtiger_contactdetails.accountid AS vtiger_contactdetailsaccount_id,vtiger_contactsubdetails.homephone AS vtiger_contactsubdetailshomephone,vtiger_contactsubdetails.leadsource AS vtiger_contactsubdetailsleadsource,vtiger_contactsubdetails.birthday AS vtiger_contactsubdetailsbirthday,vtiger_contactdetails.email AS vtiger_contactdetailsemail,vtiger_contactdetails.reportsto AS vtiger_contactdetailscontact_id,vtiger_contactdetails.secondaryemail AS vtiger_contactdetailssecondaryemail,vtiger_contactdetails.donotcall AS vtiger_contactdetailsdonotcall,vtiger_contactdetails.emailoptout AS vtiger_contactdetailsemailoptout,vtiger_crmentity.smownerid AS vtiger_crmentityassigned_user_id,vtiger_contactdetails.notify_owner AS vtiger_contactdetailsnotify_owner,vtiger_crmentity.createdtime AS vtiger_crmentitycreatedtime,vtiger_crmentity.modifiedtime AS vtiger_crmentitymodifiedtime,vtiger_crmentity.modifiedby AS vtiger_crmentitymodifiedby,vtiger_customerdetails.portal AS vtiger_customerdetailsportal,vtiger_customerdetails.support_start_date AS vtiger_customerdetailssupport_start_date,vtiger_customerdetails.support_end_date AS vtiger_customerdetailssupport_end_date,vtiger_contactaddress.mailingstreet AS vtiger_contactaddressmailingstreet,vtiger_contactaddress.otherstreet AS vtiger_contactaddressotherstreet,vtiger_contactaddress.mailingcity AS vtiger_contactaddressmailingcity,vtiger_contactaddress.othercity AS vtiger_contactaddressothercity,vtiger_contactaddress.mailingstate AS vtiger_contactaddressmailingstate,vtiger_contactaddress.otherstate AS vtiger_contactaddressotherstate,vtiger_contactaddress.mailingzip AS vtiger_contactaddressmailingzip,vtiger_contactaddress.otherzip AS vtiger_contactaddressotherzip,vtiger_contactaddress.mailingcountry AS vtiger_contactaddressmailingcountry,vtiger_contactaddress.othercountry AS vtiger_contactaddressothercountry,vtiger_contactaddress.mailingpobox AS vtiger_contactaddressmailingpobox,vtiger_contactaddress.otherpobox AS vtiger_contactaddressotherpobox,vtiger_contactdetails.imagename AS vtiger_contactdetailsimagename,vtiger_crmentity.description AS vtiger_crmentitydescription,vtiger_contactdetails.modalitapagamento AS vtiger_contactdetailsmodalitapagamento,vtiger_contactdetails.banca AS vtiger_contactdetailsbanca,vtiger_contactdetails.isconvertedfromlead AS vtiger_contactdetailsisconvertedfromlead,vtiger_crmentity.smcreatorid AS vtiger_crmentitycreated_user_id,vtiger_contactdetails.emailcampaign_optout AS vtiger_contactdetailsemailcampaign_optout,vtiger_crmentity.deleted FROM  vtiger_crmentity LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactsubdetails ON vtiger_contactsubdetails.contactsubscriptionid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactscf ON vtiger_contactscf.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_customerdetails ON vtiger_customerdetails.customerid=vtiger_crmentity.crmid WHERE  vtiger_crmentity.crmid=?  LIMIT 1
+Tue Sep  1 06:59:44 2015,478 [16207] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Prepared sql query being executed : SELECT vtiger_relatedlists.*,vtiger_tab.name as modulename FROM vtiger_relatedlists
+					INNER JOIN vtiger_tab on vtiger_tab.tabid = vtiger_relatedlists.related_tabid AND vtiger_tab.presence != 1
+					WHERE vtiger_relatedlists.tabid = ? AND related_tabid = ?
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Prepared sql query parameters : [4,26]
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Entering get_campaigns(8) method ...
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Prepared sql query being executed : SELECT name FROM vtiger_tab WHERE tabid = ?
+Tue Sep  1 06:59:44 2015,481 [16207] DEBUG VT - Prepared sql query parameters : [26]
+Tue Sep  1 06:59:44 2015,483 [16207] DEBUG VT - Entering getColumnFields(Campaigns) method ...
+Tue Sep  1 06:59:44 2015,483 [16207] DEBUG VT - in getColumnFields Campaigns
+Tue Sep  1 06:59:44 2015,483 [16207] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,483 [16207] DEBUG VT - Prepared sql query parameters : [26]
+Tue Sep  1 06:59:44 2015,485 [16207] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,485 [16207] DEBUG VT - Exiting get_campaigns method ...
+Tue Sep  1 06:59:44 2015,485 [16207] DEBUG VT - Entering getColumnFields(Campaigns) method ...
+Tue Sep  1 06:59:44 2015,485 [16207] DEBUG VT - in getColumnFields Campaigns
+Tue Sep  1 06:59:44 2015,485 [16207] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,487 [16207] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_field WHERE tabid=? ORDER BY sequence
+Tue Sep  1 06:59:44 2015,487 [16207] DEBUG VT - Prepared sql query parameters : [26]
+Tue Sep  1 06:59:44 2015,488 [16207] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,488 [16207] DEBUG VT - Prepared sql query parameters : [74]
+Tue Sep  1 06:59:44 2015,488 [16207] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,488 [16207] DEBUG VT - Prepared sql query parameters : [76]
+Tue Sep  1 06:59:44 2015,489 [16207] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,489 [16207] DEBUG VT - Prepared sql query parameters : [81]
+Tue Sep  1 06:59:44 2015,489 [16207] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blocklabel=? AND tabid=?
+Tue Sep  1 06:59:44 2015,489 [16207] DEBUG VT - Prepared sql query parameters : [,26]
+Tue Sep  1 06:59:44 2015,494 [16207] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity where name=?
+Tue Sep  1 06:59:44 2015,494 [16207] DEBUG VT - Prepared sql query parameters : [Campaigns]
+Tue Sep  1 06:59:44 2015,494 [16207] DEBUG VT - Entering getColumnFields(Campaigns) method ...
+Tue Sep  1 06:59:44 2015,495 [16207] DEBUG VT - in getColumnFields Campaigns
+Tue Sep  1 06:59:44 2015,495 [16207] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,495 [16207] DEBUG VT - Prepared sql query being executed : select distinct block,vtiger_field.tabid,name,blocklabel from vtiger_field inner join vtiger_blocks on vtiger_blocks.blockid=vtiger_field.block inner join vtiger_tab on vtiger_tab.tabid=vtiger_field.tabid where  vtiger_tab.name in (?) and vtiger_field.presence in (0,2) order by block
+Tue Sep  1 06:59:44 2015,495 [16207] DEBUG VT - Prepared sql query parameters : [Campaigns]
+Tue Sep  1 06:59:44 2015,496 [16207] DEBUG VT - Prepared sql query being executed : select *, '0' as readonly from vtiger_field where tabid =? and block in (?,?,?) and displaytype in (1,2,3,4,5)
+Tue Sep  1 06:59:44 2015,496 [16207] DEBUG VT - Prepared sql query parameters : [26,74,76,81]
+Tue Sep  1 06:59:44 2015,500 [16207] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_fieldtype
+Tue Sep  1 06:59:44 2015,501 [16207] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,501 [16207] DEBUG VT - Prepared sql query parameters : [33]
+Tue Sep  1 06:59:44 2015,502 [16207] DEBUG VT - Entering getPermittedModuleNames() method ...
+Tue Sep  1 06:59:44 2015,502 [16207] DEBUG VT - Exiting getPermittedModuleNames method ...
+Tue Sep  1 06:59:44 2015,502 [16207] DEBUG VT - Prepared sql query being executed : select name,id,ismodule from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,503 [16207] INFO VT - PearDatabase ->ADODB fetchByAssoc return null
+Tue Sep  1 06:59:44 2015,503 [16207] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,506 [16207] DEBUG VT - Prepared sql query being executed : select table_name, webservice_entity_id from vtiger_ws_entity_tables
+Tue Sep  1 06:59:44 2015,520 [16207] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,520 [16207] DEBUG VT - Prepared sql query parameters : [31]
+Tue Sep  1 06:59:44 2015,521 [16207] DEBUG VT - Prepared sql query being executed : SELECT COUNT(DISTINCT vtiger_crmentity.crmid) AS count FROM vtiger_campaign inner join vtiger_campaigncontrel on vtiger_campaigncontrel.campaignid=vtiger_campaign.campaignid inner join vtiger_crmentity on vtiger_crmentity.crmid = vtiger_campaign.campaignid inner join vtiger_campaignscf ON vtiger_campaignscf.campaignid = vtiger_campaign.campaignid left join vtiger_groups on vtiger_groups.groupid=vtiger_crmentity.smownerid left join vtiger_users on vtiger_users.id = vtiger_crmentity.smownerid where vtiger_campaigncontrel.contactid=8 and vtiger_crmentity.deleted=0 
+Tue Sep  1 06:59:44 2015,539 [16205] DEBUG user - Entering Users() method ...
+Tue Sep  1 06:59:44 2015,539 [16205] DEBUG VT - Entering getColumnFields(Users) method ...
+Tue Sep  1 06:59:44 2015,539 [16205] DEBUG VT - in getColumnFields Users
+Tue Sep  1 06:59:44 2015,539 [16205] DEBUG VT - Prepared sql query being executed : SELECT tabid, name, ownedby FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,543 [16205] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,543 [16205] DEBUG VT - Prepared sql query parameters : [29]
+Tue Sep  1 06:59:44 2015,547 [16205] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,547 [16205] DEBUG user - Exiting Users() method ...
+Tue Sep  1 06:59:44 2015,551 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,557 [16205] DEBUG VT - Prepared sql query being executed : SELECT fieldname,modulename,tablename,entityidfield,entityidcolumn from vtiger_entityname
+Tue Sep  1 06:59:44 2015,562 [16205] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,562 [16205] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,562 [16205] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,563 [16205] DEBUG VT - Prepared sql query parameters : [4]
+Tue Sep  1 06:59:44 2015,566 [16205] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,567 [16205] DEBUG VT - Prepared sql query being executed : SELECT vtiger_contactdetails.salutation AS vtiger_contactdetailssalutationtype,vtiger_contactdetails.firstname AS vtiger_contactdetailsfirstname,vtiger_contactdetails.contact_no AS vtiger_contactdetailscontact_no,vtiger_contactdetails.phone AS vtiger_contactdetailsphone,vtiger_contactdetails.lastname AS vtiger_contactdetailslastname,vtiger_contactdetails.mobile AS vtiger_contactdetailsmobile,vtiger_contactdetails.accountid AS vtiger_contactdetailsaccount_id,vtiger_contactsubdetails.homephone AS vtiger_contactsubdetailshomephone,vtiger_contactsubdetails.leadsource AS vtiger_contactsubdetailsleadsource,vtiger_contactsubdetails.birthday AS vtiger_contactsubdetailsbirthday,vtiger_contactdetails.email AS vtiger_contactdetailsemail,vtiger_contactdetails.reportsto AS vtiger_contactdetailscontact_id,vtiger_contactdetails.secondaryemail AS vtiger_contactdetailssecondaryemail,vtiger_contactdetails.donotcall AS vtiger_contactdetailsdonotcall,vtiger_contactdetails.emailoptout AS vtiger_contactdetailsemailoptout,vtiger_crmentity.smownerid AS vtiger_crmentityassigned_user_id,vtiger_contactdetails.notify_owner AS vtiger_contactdetailsnotify_owner,vtiger_crmentity.createdtime AS vtiger_crmentitycreatedtime,vtiger_crmentity.modifiedtime AS vtiger_crmentitymodifiedtime,vtiger_crmentity.modifiedby AS vtiger_crmentitymodifiedby,vtiger_customerdetails.portal AS vtiger_customerdetailsportal,vtiger_customerdetails.support_start_date AS vtiger_customerdetailssupport_start_date,vtiger_customerdetails.support_end_date AS vtiger_customerdetailssupport_end_date,vtiger_contactaddress.mailingstreet AS vtiger_contactaddressmailingstreet,vtiger_contactaddress.otherstreet AS vtiger_contactaddressotherstreet,vtiger_contactaddress.mailingcity AS vtiger_contactaddressmailingcity,vtiger_contactaddress.othercity AS vtiger_contactaddressothercity,vtiger_contactaddress.mailingstate AS vtiger_contactaddressmailingstate,vtiger_contactaddress.otherstate AS vtiger_contactaddressotherstate,vtiger_contactaddress.mailingzip AS vtiger_contactaddressmailingzip,vtiger_contactaddress.otherzip AS vtiger_contactaddressotherzip,vtiger_contactaddress.mailingcountry AS vtiger_contactaddressmailingcountry,vtiger_contactaddress.othercountry AS vtiger_contactaddressothercountry,vtiger_contactaddress.mailingpobox AS vtiger_contactaddressmailingpobox,vtiger_contactaddress.otherpobox AS vtiger_contactaddressotherpobox,vtiger_contactdetails.imagename AS vtiger_contactdetailsimagename,vtiger_crmentity.description AS vtiger_crmentitydescription,vtiger_contactdetails.modalitapagamento AS vtiger_contactdetailsmodalitapagamento,vtiger_contactdetails.banca AS vtiger_contactdetailsbanca,vtiger_contactdetails.isconvertedfromlead AS vtiger_contactdetailsisconvertedfromlead,vtiger_crmentity.smcreatorid AS vtiger_crmentitycreated_user_id,vtiger_contactdetails.emailcampaign_optout AS vtiger_contactdetailsemailcampaign_optout,vtiger_crmentity.deleted FROM  vtiger_crmentity LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactsubdetails ON vtiger_contactsubdetails.contactsubscriptionid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactscf ON vtiger_contactscf.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_customerdetails ON vtiger_customerdetails.customerid=vtiger_crmentity.crmid WHERE  vtiger_crmentity.crmid=?  LIMIT 1
+Tue Sep  1 06:59:44 2015,567 [16205] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,569 [16205] DEBUG VT - Prepared sql query being executed : SELECT vtiger_relatedlists.*,vtiger_tab.name as modulename FROM vtiger_relatedlists
+					INNER JOIN vtiger_tab on vtiger_tab.tabid = vtiger_relatedlists.related_tabid AND vtiger_tab.presence != 1
+					WHERE vtiger_relatedlists.tabid = ? AND related_tabid = ?
+Tue Sep  1 06:59:44 2015,569 [16205] DEBUG VT - Prepared sql query parameters : [4,14]
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Entering get_products(8) method ...
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Prepared sql query being executed : SELECT name FROM vtiger_tab WHERE tabid = ?
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Prepared sql query parameters : [14]
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG product - Entering Products() method ...
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Entering getColumnFields(Products) method ...
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - in getColumnFields Products
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,570 [16205] DEBUG VT - Prepared sql query parameters : [14]
+Tue Sep  1 06:59:44 2015,573 [16205] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,573 [16205] DEBUG product - Exiting Product method ...
+Tue Sep  1 06:59:44 2015,574 [16205] DEBUG VT - Exiting get_products method ...
+Tue Sep  1 06:59:44 2015,574 [16205] DEBUG product - Entering Products() method ...
+Tue Sep  1 06:59:44 2015,574 [16205] DEBUG VT - Entering getColumnFields(Products) method ...
+Tue Sep  1 06:59:44 2015,574 [16205] DEBUG VT - in getColumnFields Products
+Tue Sep  1 06:59:44 2015,574 [16205] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,574 [16205] DEBUG product - Exiting Product method ...
+Tue Sep  1 06:59:44 2015,576 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_field WHERE tabid=? ORDER BY sequence
+Tue Sep  1 06:59:44 2015,576 [16205] DEBUG VT - Prepared sql query parameters : [14]
+Tue Sep  1 06:59:44 2015,577 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,577 [16205] DEBUG VT - Prepared sql query parameters : [31]
+Tue Sep  1 06:59:44 2015,577 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,577 [16205] DEBUG VT - Prepared sql query parameters : [32]
+Tue Sep  1 06:59:44 2015,578 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,578 [16205] DEBUG VT - Prepared sql query parameters : [33]
+Tue Sep  1 06:59:44 2015,578 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,578 [16205] DEBUG VT - Prepared sql query parameters : [35]
+Tue Sep  1 06:59:44 2015,579 [16205] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,579 [16205] DEBUG VT - Prepared sql query parameters : [36]
+Tue Sep  1 06:59:44 2015,584 [16205] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity where name=?
+Tue Sep  1 06:59:44 2015,584 [16205] DEBUG VT - Prepared sql query parameters : [Products]
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG product - Entering Products() method ...
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG VT - Entering getColumnFields(Products) method ...
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG VT - in getColumnFields Products
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG product - Exiting Product method ...
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG VT - Prepared sql query being executed : select distinct block,vtiger_field.tabid,name,blocklabel from vtiger_field inner join vtiger_blocks on vtiger_blocks.blockid=vtiger_field.block inner join vtiger_tab on vtiger_tab.tabid=vtiger_field.tabid where  vtiger_tab.name in (?) and vtiger_field.presence in (0,2) order by block
+Tue Sep  1 06:59:44 2015,585 [16205] DEBUG VT - Prepared sql query parameters : [Products]
+Tue Sep  1 06:59:44 2015,586 [16205] DEBUG VT - Prepared sql query being executed : select *, '0' as readonly from vtiger_field where tabid =? and block in (?,?,?,?,?) and displaytype in (1,2,3,4,5)
+Tue Sep  1 06:59:44 2015,586 [16205] DEBUG VT - Prepared sql query parameters : [14,31,32,36,33,35]
+Tue Sep  1 06:59:44 2015,591 [16205] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_fieldtype
+Tue Sep  1 06:59:44 2015,594 [16205] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,594 [16205] DEBUG VT - Prepared sql query parameters : [25]
+Tue Sep  1 06:59:44 2015,595 [16205] DEBUG VT - Entering getPermittedModuleNames() method ...
+Tue Sep  1 06:59:44 2015,595 [16205] DEBUG VT - Exiting getPermittedModuleNames method ...
+Tue Sep  1 06:59:44 2015,595 [16205] DEBUG VT - Prepared sql query being executed : select name,id,ismodule from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,596 [16205] INFO VT - PearDatabase ->ADODB fetchByAssoc return null
+Tue Sep  1 06:59:44 2015,596 [16205] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,599 [16205] DEBUG VT - Prepared sql query being executed : select table_name, webservice_entity_id from vtiger_ws_entity_tables
+Tue Sep  1 06:59:44 2015,612 [16205] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,612 [16205] DEBUG VT - Prepared sql query parameters : [31]
+Tue Sep  1 06:59:44 2015,613 [16205] DEBUG VT - Prepared sql query being executed : SELECT COUNT(DISTINCT vtiger_crmentity.crmid) AS count FROM vtiger_products INNER JOIN vtiger_seproductsrel ON vtiger_seproductsrel.productid=vtiger_products.productid and vtiger_seproductsrel.setype="Contacts" INNER JOIN vtiger_productcf ON vtiger_products.productid = vtiger_productcf.productid INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_products.productid INNER JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid = vtiger_seproductsrel.crmid LEFT JOIN vtiger_users ON vtiger_users.id=vtiger_crmentity.smownerid LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid WHERE vtiger_contactdetails.contactid = 8 and vtiger_crmentity.deleted = 0 
+Tue Sep  1 06:59:44 2015,630 [16206] DEBUG user - Entering Users() method ...
+Tue Sep  1 06:59:44 2015,630 [16206] DEBUG VT - Entering getColumnFields(Users) method ...
+Tue Sep  1 06:59:44 2015,630 [16206] DEBUG VT - in getColumnFields Users
+Tue Sep  1 06:59:44 2015,630 [16206] DEBUG VT - Prepared sql query being executed : SELECT tabid, name, ownedby FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,632 [16206] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,632 [16206] DEBUG VT - Prepared sql query parameters : [29]
+Tue Sep  1 06:59:44 2015,637 [16206] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,637 [16206] DEBUG user - Exiting Users() method ...
+Tue Sep  1 06:59:44 2015,640 [16206] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,646 [16206] DEBUG VT - Prepared sql query being executed : SELECT fieldname,modulename,tablename,entityidfield,entityidcolumn from vtiger_entityname
+Tue Sep  1 06:59:44 2015,652 [16206] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,652 [16206] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,652 [16206] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,652 [16206] DEBUG VT - Prepared sql query parameters : [4]
+Tue Sep  1 06:59:44 2015,656 [16206] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,656 [16206] DEBUG VT - Prepared sql query being executed : SELECT vtiger_contactdetails.salutation AS vtiger_contactdetailssalutationtype,vtiger_contactdetails.firstname AS vtiger_contactdetailsfirstname,vtiger_contactdetails.contact_no AS vtiger_contactdetailscontact_no,vtiger_contactdetails.phone AS vtiger_contactdetailsphone,vtiger_contactdetails.lastname AS vtiger_contactdetailslastname,vtiger_contactdetails.mobile AS vtiger_contactdetailsmobile,vtiger_contactdetails.accountid AS vtiger_contactdetailsaccount_id,vtiger_contactsubdetails.homephone AS vtiger_contactsubdetailshomephone,vtiger_contactsubdetails.leadsource AS vtiger_contactsubdetailsleadsource,vtiger_contactsubdetails.birthday AS vtiger_contactsubdetailsbirthday,vtiger_contactdetails.email AS vtiger_contactdetailsemail,vtiger_contactdetails.reportsto AS vtiger_contactdetailscontact_id,vtiger_contactdetails.secondaryemail AS vtiger_contactdetailssecondaryemail,vtiger_contactdetails.donotcall AS vtiger_contactdetailsdonotcall,vtiger_contactdetails.emailoptout AS vtiger_contactdetailsemailoptout,vtiger_crmentity.smownerid AS vtiger_crmentityassigned_user_id,vtiger_contactdetails.notify_owner AS vtiger_contactdetailsnotify_owner,vtiger_crmentity.createdtime AS vtiger_crmentitycreatedtime,vtiger_crmentity.modifiedtime AS vtiger_crmentitymodifiedtime,vtiger_crmentity.modifiedby AS vtiger_crmentitymodifiedby,vtiger_customerdetails.portal AS vtiger_customerdetailsportal,vtiger_customerdetails.support_start_date AS vtiger_customerdetailssupport_start_date,vtiger_customerdetails.support_end_date AS vtiger_customerdetailssupport_end_date,vtiger_contactaddress.mailingstreet AS vtiger_contactaddressmailingstreet,vtiger_contactaddress.otherstreet AS vtiger_contactaddressotherstreet,vtiger_contactaddress.mailingcity AS vtiger_contactaddressmailingcity,vtiger_contactaddress.othercity AS vtiger_contactaddressothercity,vtiger_contactaddress.mailingstate AS vtiger_contactaddressmailingstate,vtiger_contactaddress.otherstate AS vtiger_contactaddressotherstate,vtiger_contactaddress.mailingzip AS vtiger_contactaddressmailingzip,vtiger_contactaddress.otherzip AS vtiger_contactaddressotherzip,vtiger_contactaddress.mailingcountry AS vtiger_contactaddressmailingcountry,vtiger_contactaddress.othercountry AS vtiger_contactaddressothercountry,vtiger_contactaddress.mailingpobox AS vtiger_contactaddressmailingpobox,vtiger_contactaddress.otherpobox AS vtiger_contactaddressotherpobox,vtiger_contactdetails.imagename AS vtiger_contactdetailsimagename,vtiger_crmentity.description AS vtiger_crmentitydescription,vtiger_contactdetails.modalitapagamento AS vtiger_contactdetailsmodalitapagamento,vtiger_contactdetails.banca AS vtiger_contactdetailsbanca,vtiger_contactdetails.isconvertedfromlead AS vtiger_contactdetailsisconvertedfromlead,vtiger_crmentity.smcreatorid AS vtiger_crmentitycreated_user_id,vtiger_contactdetails.emailcampaign_optout AS vtiger_contactdetailsemailcampaign_optout,vtiger_crmentity.deleted FROM  vtiger_crmentity LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactsubdetails ON vtiger_contactsubdetails.contactsubscriptionid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactscf ON vtiger_contactscf.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_customerdetails ON vtiger_customerdetails.customerid=vtiger_crmentity.crmid WHERE  vtiger_crmentity.crmid=?  LIMIT 1
+Tue Sep  1 06:59:44 2015,656 [16206] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - Prepared sql query being executed : SELECT vtiger_relatedlists.*,vtiger_tab.name as modulename FROM vtiger_relatedlists
+					INNER JOIN vtiger_tab on vtiger_tab.tabid = vtiger_relatedlists.related_tabid AND vtiger_tab.presence != 1
+					WHERE vtiger_relatedlists.tabid = ? AND related_tabid = ?
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - Prepared sql query parameters : [4,8]
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - Prepared sql query being executed : SELECT name FROM vtiger_tab WHERE tabid = ?
+Tue Sep  1 06:59:44 2015,659 [16206] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,660 [16206] DEBUG notes - Entering Documents() method ...
+Tue Sep  1 06:59:44 2015,660 [16206] DEBUG VT - Entering getColumnFields(Documents) method ...
+Tue Sep  1 06:59:44 2015,660 [16206] DEBUG VT - in getColumnFields Documents
+Tue Sep  1 06:59:44 2015,660 [16206] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,660 [16206] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG notes - Exiting Documents method ...
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG notes - Entering Documents() method ...
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG VT - Entering getColumnFields(Documents) method ...
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG VT - in getColumnFields Documents
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,662 [16206] DEBUG notes - Exiting Documents method ...
+Tue Sep  1 06:59:44 2015,664 [16206] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_field WHERE tabid=? ORDER BY sequence
+Tue Sep  1 06:59:44 2015,664 [16206] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,664 [16206] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,664 [16206] DEBUG VT - Prepared sql query parameters : [17]
+Tue Sep  1 06:59:44 2015,665 [16206] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,665 [16206] DEBUG VT - Prepared sql query parameters : [84]
+Tue Sep  1 06:59:44 2015,665 [16206] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,665 [16206] DEBUG VT - Prepared sql query parameters : [18]
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity where name=?
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG VT - Prepared sql query parameters : [Documents]
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG notes - Entering Documents() method ...
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG VT - Entering getColumnFields(Documents) method ...
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG VT - in getColumnFields Documents
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,668 [16206] DEBUG notes - Exiting Documents method ...
+Tue Sep  1 06:59:44 2015,669 [16206] DEBUG VT - Prepared sql query being executed : select distinct block,vtiger_field.tabid,name,blocklabel from vtiger_field inner join vtiger_blocks on vtiger_blocks.blockid=vtiger_field.block inner join vtiger_tab on vtiger_tab.tabid=vtiger_field.tabid where  vtiger_tab.name in (?) and vtiger_field.presence in (0,2) order by block
+Tue Sep  1 06:59:44 2015,669 [16206] DEBUG VT - Prepared sql query parameters : [Documents]
+Tue Sep  1 06:59:44 2015,669 [16206] DEBUG VT - Prepared sql query being executed : select *, '0' as readonly from vtiger_field where tabid =? and block in (?,?,?) and displaytype in (1,2,3,4,5)
+Tue Sep  1 06:59:44 2015,670 [16206] DEBUG VT - Prepared sql query parameters : [8,17,18,84]
+Tue Sep  1 06:59:44 2015,672 [16206] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_fieldtype
+Tue Sep  1 06:59:44 2015,675 [16206] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,675 [16206] DEBUG VT - Prepared sql query parameters : [38]
+Tue Sep  1 06:59:44 2015,675 [16206] DEBUG VT - Entering getPermittedModuleNames() method ...
+Tue Sep  1 06:59:44 2015,675 [16206] DEBUG VT - Exiting getPermittedModuleNames method ...
+Tue Sep  1 06:59:44 2015,675 [16206] DEBUG VT - Prepared sql query being executed : select name,id,ismodule from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,676 [16206] INFO VT - PearDatabase ->ADODB fetchByAssoc return null
+Tue Sep  1 06:59:44 2015,676 [16206] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,679 [16206] DEBUG VT - Prepared sql query being executed : select table_name, webservice_entity_id from vtiger_ws_entity_tables
+Tue Sep  1 06:59:44 2015,690 [16206] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,690 [16206] DEBUG VT - Prepared sql query parameters : [31]
+Tue Sep  1 06:59:44 2015,691 [16206] DEBUG VT - Prepared sql query being executed : SELECT COUNT(DISTINCT vtiger_crmentity.crmid) AS count FROM vtiger_notes inner join vtiger_senotesrel on vtiger_senotesrel.notesid= vtiger_notes.notesid left join vtiger_notescf ON vtiger_notescf.notesid= vtiger_notes.notesid inner join vtiger_crmentity on vtiger_crmentity.crmid= vtiger_notes.notesid and vtiger_crmentity.deleted=0 inner join vtiger_crmentity crm2 on crm2.crmid=vtiger_senotesrel.crmid LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid left join vtiger_seattachmentsrel on vtiger_seattachmentsrel.crmid =vtiger_notes.notesid left join vtiger_attachments on vtiger_seattachmentsrel.attachmentsid = vtiger_attachments.attachmentsid left join vtiger_users on vtiger_crmentity.smownerid= vtiger_users.id where crm2.crmid=8 AND vtiger_notes.filestatus = 1 
+Tue Sep  1 06:59:44 2015,711 [16208] DEBUG user - Entering Users() method ...
+Tue Sep  1 06:59:44 2015,711 [16208] DEBUG VT - Entering getColumnFields(Users) method ...
+Tue Sep  1 06:59:44 2015,711 [16208] DEBUG VT - in getColumnFields Users
+Tue Sep  1 06:59:44 2015,711 [16208] DEBUG VT - Prepared sql query being executed : SELECT tabid, name, ownedby FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,715 [16208] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,715 [16208] DEBUG VT - Prepared sql query parameters : [29]
+Tue Sep  1 06:59:44 2015,721 [16208] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,721 [16208] DEBUG user - Exiting Users() method ...
+Tue Sep  1 06:59:44 2015,724 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_tab
+Tue Sep  1 06:59:44 2015,730 [16208] DEBUG VT - Prepared sql query being executed : SELECT fieldname,modulename,tablename,entityidfield,entityidcolumn from vtiger_entityname
+Tue Sep  1 06:59:44 2015,735 [16208] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,736 [16208] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,736 [16208] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,736 [16208] DEBUG VT - Prepared sql query parameters : [4]
+Tue Sep  1 06:59:44 2015,739 [16208] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,740 [16208] DEBUG VT - Prepared sql query being executed : SELECT vtiger_contactdetails.salutation AS vtiger_contactdetailssalutationtype,vtiger_contactdetails.firstname AS vtiger_contactdetailsfirstname,vtiger_contactdetails.contact_no AS vtiger_contactdetailscontact_no,vtiger_contactdetails.phone AS vtiger_contactdetailsphone,vtiger_contactdetails.lastname AS vtiger_contactdetailslastname,vtiger_contactdetails.mobile AS vtiger_contactdetailsmobile,vtiger_contactdetails.accountid AS vtiger_contactdetailsaccount_id,vtiger_contactsubdetails.homephone AS vtiger_contactsubdetailshomephone,vtiger_contactsubdetails.leadsource AS vtiger_contactsubdetailsleadsource,vtiger_contactsubdetails.birthday AS vtiger_contactsubdetailsbirthday,vtiger_contactdetails.email AS vtiger_contactdetailsemail,vtiger_contactdetails.reportsto AS vtiger_contactdetailscontact_id,vtiger_contactdetails.secondaryemail AS vtiger_contactdetailssecondaryemail,vtiger_contactdetails.donotcall AS vtiger_contactdetailsdonotcall,vtiger_contactdetails.emailoptout AS vtiger_contactdetailsemailoptout,vtiger_crmentity.smownerid AS vtiger_crmentityassigned_user_id,vtiger_contactdetails.notify_owner AS vtiger_contactdetailsnotify_owner,vtiger_crmentity.createdtime AS vtiger_crmentitycreatedtime,vtiger_crmentity.modifiedtime AS vtiger_crmentitymodifiedtime,vtiger_crmentity.modifiedby AS vtiger_crmentitymodifiedby,vtiger_customerdetails.portal AS vtiger_customerdetailsportal,vtiger_customerdetails.support_start_date AS vtiger_customerdetailssupport_start_date,vtiger_customerdetails.support_end_date AS vtiger_customerdetailssupport_end_date,vtiger_contactaddress.mailingstreet AS vtiger_contactaddressmailingstreet,vtiger_contactaddress.otherstreet AS vtiger_contactaddressotherstreet,vtiger_contactaddress.mailingcity AS vtiger_contactaddressmailingcity,vtiger_contactaddress.othercity AS vtiger_contactaddressothercity,vtiger_contactaddress.mailingstate AS vtiger_contactaddressmailingstate,vtiger_contactaddress.otherstate AS vtiger_contactaddressotherstate,vtiger_contactaddress.mailingzip AS vtiger_contactaddressmailingzip,vtiger_contactaddress.otherzip AS vtiger_contactaddressotherzip,vtiger_contactaddress.mailingcountry AS vtiger_contactaddressmailingcountry,vtiger_contactaddress.othercountry AS vtiger_contactaddressothercountry,vtiger_contactaddress.mailingpobox AS vtiger_contactaddressmailingpobox,vtiger_contactaddress.otherpobox AS vtiger_contactaddressotherpobox,vtiger_contactdetails.imagename AS vtiger_contactdetailsimagename,vtiger_crmentity.description AS vtiger_crmentitydescription,vtiger_contactdetails.modalitapagamento AS vtiger_contactdetailsmodalitapagamento,vtiger_contactdetails.banca AS vtiger_contactdetailsbanca,vtiger_contactdetails.isconvertedfromlead AS vtiger_contactdetailsisconvertedfromlead,vtiger_crmentity.smcreatorid AS vtiger_crmentitycreated_user_id,vtiger_contactdetails.emailcampaign_optout AS vtiger_contactdetailsemailcampaign_optout,vtiger_crmentity.deleted FROM  vtiger_crmentity LEFT JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactsubdetails ON vtiger_contactsubdetails.contactsubscriptionid=vtiger_crmentity.crmid LEFT JOIN vtiger_contactscf ON vtiger_contactscf.contactid=vtiger_crmentity.crmid LEFT JOIN vtiger_customerdetails ON vtiger_customerdetails.customerid=vtiger_crmentity.crmid WHERE  vtiger_crmentity.crmid=?  LIMIT 1
+Tue Sep  1 06:59:44 2015,740 [16208] DEBUG VT - Prepared sql query parameters : [8]
+Tue Sep  1 06:59:44 2015,742 [16208] DEBUG VT - Prepared sql query being executed : SELECT vtiger_relatedlists.*,vtiger_tab.name as modulename FROM vtiger_relatedlists
+					INNER JOIN vtiger_tab on vtiger_tab.tabid = vtiger_relatedlists.related_tabid AND vtiger_tab.presence != 1
+					WHERE vtiger_relatedlists.tabid = ? AND related_tabid = ?
+Tue Sep  1 06:59:44 2015,742 [16208] DEBUG VT - Prepared sql query parameters : [4,23]
+Tue Sep  1 06:59:44 2015,743 [16208] DEBUG VT - Entering getColumnFields(Contacts) method ...
+Tue Sep  1 06:59:44 2015,743 [16208] DEBUG VT - in getColumnFields Contacts
+Tue Sep  1 06:59:44 2015,743 [16208] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,743 [16208] DEBUG VT - Entering get_invoices(8) method ...
+Tue Sep  1 06:59:44 2015,743 [16208] DEBUG VT - Prepared sql query being executed : SELECT name FROM vtiger_tab WHERE tabid = ?
+Tue Sep  1 06:59:44 2015,743 [16208] DEBUG VT - Prepared sql query parameters : [23]
+Tue Sep  1 06:59:44 2015,744 [16208] DEBUG Invoice - Entering Invoice() method ...
+Tue Sep  1 06:59:44 2015,744 [16208] DEBUG VT - Entering getColumnFields(Invoice) method ...
+Tue Sep  1 06:59:44 2015,744 [16208] DEBUG VT - in getColumnFields Invoice
+Tue Sep  1 06:59:44 2015,744 [16208] DEBUG VT - Prepared sql query being executed : SELECT tabid, fieldname, fieldid, fieldlabel, columnname, tablename, uitype, typeofdata, presence
+		FROM vtiger_field WHERE tabid in (?)
+Tue Sep  1 06:59:44 2015,744 [16208] DEBUG VT - Prepared sql query parameters : [23]
+Tue Sep  1 06:59:44 2015,748 [16208] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,748 [16208] DEBUG Invoice - Exiting Invoice method ...
+Tue Sep  1 06:59:44 2015,749 [16208] DEBUG VT - Exiting get_invoices method ...
+Tue Sep  1 06:59:44 2015,749 [16208] DEBUG Invoice - Entering Invoice() method ...
+Tue Sep  1 06:59:44 2015,749 [16208] DEBUG VT - Entering getColumnFields(Invoice) method ...
+Tue Sep  1 06:59:44 2015,749 [16208] DEBUG VT - in getColumnFields Invoice
+Tue Sep  1 06:59:44 2015,749 [16208] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,749 [16208] DEBUG Invoice - Exiting Invoice method ...
+Tue Sep  1 06:59:44 2015,751 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_field WHERE tabid=? ORDER BY sequence
+Tue Sep  1 06:59:44 2015,751 [16208] DEBUG VT - Prepared sql query parameters : [23]
+Tue Sep  1 06:59:44 2015,751 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,751 [16208] DEBUG VT - Prepared sql query parameters : [67]
+Tue Sep  1 06:59:44 2015,752 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,752 [16208] DEBUG VT - Prepared sql query parameters : [69]
+Tue Sep  1 06:59:44 2015,752 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,752 [16208] DEBUG VT - Prepared sql query parameters : [72]
+Tue Sep  1 06:59:44 2015,753 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,753 [16208] DEBUG VT - Prepared sql query parameters : [71]
+Tue Sep  1 06:59:44 2015,753 [16208] DEBUG VT - Prepared sql query being executed : SELECT * FROM vtiger_blocks WHERE blockid=?
+Tue Sep  1 06:59:44 2015,753 [16208] DEBUG VT - Prepared sql query parameters : [123]
+Tue Sep  1 06:59:44 2015,762 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity where name=?
+Tue Sep  1 06:59:44 2015,762 [16208] DEBUG VT - Prepared sql query parameters : [Invoice]
+Tue Sep  1 06:59:44 2015,764 [16208] DEBUG Invoice - Entering Invoice() method ...
+Tue Sep  1 06:59:44 2015,764 [16208] DEBUG VT - Entering getColumnFields(Invoice) method ...
+Tue Sep  1 06:59:44 2015,764 [16208] DEBUG VT - in getColumnFields Invoice
+Tue Sep  1 06:59:44 2015,764 [16208] DEBUG VT - Exiting getColumnFields method ...
+Tue Sep  1 06:59:44 2015,764 [16208] DEBUG Invoice - Exiting Invoice method ...
+Tue Sep  1 06:59:44 2015,765 [16208] DEBUG VT - Prepared sql query being executed : select distinct block,vtiger_field.tabid,name,blocklabel from vtiger_field inner join vtiger_blocks on vtiger_blocks.blockid=vtiger_field.block inner join vtiger_tab on vtiger_tab.tabid=vtiger_field.tabid where  vtiger_tab.name in (?) and vtiger_field.presence in (0,2) order by block
+Tue Sep  1 06:59:44 2015,765 [16208] DEBUG VT - Prepared sql query parameters : [Invoice]
+Tue Sep  1 06:59:44 2015,765 [16208] DEBUG VT - Prepared sql query being executed : select *, '0' as readonly from vtiger_field where tabid =? and block in (?,?,?,?,?) and displaytype in (1,2,3,4,5)
+Tue Sep  1 06:59:44 2015,765 [16208] DEBUG VT - Prepared sql query parameters : [23,67,69,71,72,123]
+Tue Sep  1 06:59:44 2015,774 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_fieldtype
+Tue Sep  1 06:59:44 2015,775 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,775 [16208] DEBUG VT - Prepared sql query parameters : [28]
+Tue Sep  1 06:59:44 2015,775 [16208] DEBUG VT - Entering getPermittedModuleNames() method ...
+Tue Sep  1 06:59:44 2015,776 [16208] DEBUG VT - Exiting getPermittedModuleNames method ...
+Tue Sep  1 06:59:44 2015,776 [16208] DEBUG VT - Prepared sql query being executed : select name,id,ismodule from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,777 [16208] INFO VT - PearDatabase ->ADODB fetchByAssoc return null
+Tue Sep  1 06:59:44 2015,777 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_entity
+Tue Sep  1 06:59:44 2015,780 [16208] DEBUG VT - Prepared sql query being executed : select table_name, webservice_entity_id from vtiger_ws_entity_tables
+Tue Sep  1 06:59:44 2015,790 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,790 [16208] DEBUG VT - Prepared sql query parameters : [22]
+Tue Sep  1 06:59:44 2015,792 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,793 [16208] DEBUG VT - Prepared sql query parameters : [24]
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query parameters : [31]
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query parameters : [37]
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query being executed : select relmodule as type from vtiger_fieldmodulerel where fieldid=?
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query parameters : [715]
+Tue Sep  1 06:59:44 2015,794 [16208] DEBUG VT - Prepared sql query being executed : select relmodule as type from vtiger_fieldmodulerel where fieldid=?
+Tue Sep  1 06:59:44 2015,795 [16208] DEBUG VT - Prepared sql query parameters : [736]
+Tue Sep  1 06:59:44 2015,795 [16208] DEBUG VT - Prepared sql query being executed : select relmodule as type from vtiger_fieldmodulerel where fieldid=?
+Tue Sep  1 06:59:44 2015,795 [16208] DEBUG VT - Prepared sql query parameters : [741]
+Tue Sep  1 06:59:44 2015,795 [16208] DEBUG VT - Prepared sql query being executed : select * from vtiger_ws_referencetype where fieldtypeid=?
+Tue Sep  1 06:59:44 2015,795 [16208] DEBUG VT - Prepared sql query parameters : [31]
+Tue Sep  1 06:59:44 2015,796 [16208] DEBUG VT - Prepared sql query being executed : SELECT COUNT(DISTINCT vtiger_crmentity.crmid) AS count FROM vtiger_invoice INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_invoice.invoiceid LEFT OUTER JOIN vtiger_contactdetails ON vtiger_contactdetails.contactid = vtiger_invoice.contactid LEFT OUTER JOIN vtiger_salesorder ON vtiger_salesorder.salesorderid = vtiger_invoice.salesorderid LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid LEFT JOIN vtiger_invoicecf ON vtiger_invoicecf.invoiceid = vtiger_invoice.invoiceid LEFT JOIN vtiger_invoicebillads ON vtiger_invoicebillads.invoicebilladdressid = vtiger_invoice.invoiceid LEFT JOIN vtiger_invoiceshipads ON vtiger_invoiceshipads.invoiceshipaddressid = vtiger_invoice.invoiceid LEFT JOIN vtiger_users ON vtiger_crmentity.smownerid = vtiger_users.id WHERE vtiger_crmentity.deleted = 0 AND vtiger_contactdetails.contactid = 8 

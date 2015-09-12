@@ -1,0 +1,57 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>green_accounting</name>
+			<sql><![CDATA[CREATE TABLE `green_accounting` (
+  `accountingid` int(11) DEFAULT NULL,
+  `accounting` varchar(255) DEFAULT NULL,
+  `accounting_no` varchar(100) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `duedate` date DEFAULT NULL,
+  `paymenttype` varchar(100) DEFAULT NULL,
+  `accountingstatus` varchar(100) DEFAULT NULL,
+  `relation1` varchar(255) DEFAULT NULL,
+  `relation2` varchar(255) DEFAULT NULL,
+  `relation3` varchar(255) DEFAULT NULL,
+  `subtotal` varchar(100) DEFAULT NULL,
+  `adjustment` varchar(100) DEFAULT NULL,
+  `total` varchar(100) DEFAULT NULL,
+  `taxtype` varchar(100) DEFAULT NULL,
+  `s_h_amount` varchar(100) DEFAULT NULL,
+  `currency_id` varchar(255) DEFAULT NULL,
+  `conversion_rate` varchar(255) DEFAULT NULL,
+  `pre_tax_total` varchar(100) DEFAULT NULL,
+  `s_h_percent` varchar(100) DEFAULT NULL,
+  `payment_mode` varchar(255) DEFAULT NULL,
+  `bank` varchar(255) DEFAULT NULL,
+  `datepayment` date DEFAULT NULL,
+  `transaction_id` varchar(255) DEFAULT NULL,
+  `discount_percent` varchar(255) DEFAULT NULL,
+  `discount_amount` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>green_accountingcf</name>
+			<sql><![CDATA[CREATE TABLE `green_accountingcf` (
+  `accountingid` int(11) NOT NULL,
+  PRIMARY KEY (`accountingid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_settings_field</name>
+			<sql><![CDATA[UPDATE `vtiger_settings_field` SET active = 1 where name = 'Payment Module Management']]></sql>
+		</table>
+		<table>
+			<name>vtiger_settings_field</name>
+			<sql><![CDATA[INSERT INTO `vtiger_settings_field`
+  (`fieldid`, `blockid`, `name`, `iconpath`, `description`, `linkto`, `sequence`, `active`, `pinned`)
+  VALUES ((SELECT id FROM `vtiger_settings_field_seq`)+1, '4', 'Payment Module Management', NULL, 'Allow you to enable and disable widget for different modules', 'index.php?module=Accounting&parent=Settings&view=PaymentDetails', NULL , '0', '0')
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_settings_field_seq</name>
+			<sql><![CDATA[UPDATE `vtiger_settings_field_seq` SET id = id+1]]></sql>
+		</table>
+	</tables>
+</schema>

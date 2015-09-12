@@ -1,0 +1,5 @@
+1. Put the vtrc folder in /plugins directory
+2. Edit your config file and add "vtrc" in plugins
+3. Execute the sql commands mentioned under SQL/mysql.sql file for creation of custom tables.
+
+4. Go to Roundcube settings > Vtiger > provide credentials.

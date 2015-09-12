@@ -1,0 +1,148 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_greentimecontrol</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_greentimecontrol` (
+			  `greentimecontrolid` int(11) DEFAULT NULL,
+			  `name` varchar(255) DEFAULT NULL,
+			  `greentimecontrol_no` varchar(100) DEFAULT NULL,
+			  `greentimecontrol_status` varchar(100) DEFAULT NULL,
+			  `date_start` date DEFAULT NULL,
+			  `time_start` varchar(255) DEFAULT NULL,
+			  `time_end` varchar(255) DEFAULT NULL,
+			  `due_date` date DEFAULT NULL,
+			  `sum_time` varchar(100) DEFAULT NULL,
+			  `payment` varchar(100) DEFAULT NULL,
+			  `accountsid` varchar(255) DEFAULT NULL,
+			  `contactsid` varchar(255) DEFAULT NULL,
+			  `helpdeskid` varchar(255) DEFAULT NULL,
+			  `projectid` varchar(255) DEFAULT NULL,
+			  `projecttaskid` varchar(255) DEFAULT NULL,
+			  `potentialsid` varchar(255) DEFAULT NULL,
+			  `quotesid` varchar(255) DEFAULT NULL,
+			  `assetsid` varchar(255) DEFAULT NULL,
+			  `salesorderid` varchar(255) DEFAULT NULL,
+			  `servicecontractsid` varchar(255) DEFAULT NULL,
+			  `leadsid` varchar(255) DEFAULT NULL
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Contacts'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Accounts'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'HelpDesk'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Project'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'ProjectTask'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Potentials'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Quotes'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Assets'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'Leads'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'SalesOrder'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links</name>
+			<sql><![CDATA[INSERT INTO `vtiger_links` 
+				(`linkid`, `tabid`, `linktype`, `linklabel`, `linkurl`, `linkicon`, `sequence`, `handler_path`, `handler_class`, `handler`)
+				VALUES ((SELECT id FROM `vtiger_links_seq`)+1, (SELECT tabid FROM `vtiger_tab` where `name` = 'ServiceContracts'), 'DETAILVIEWSIDEBARWIDGET', 'Time Control', 'module=GreenTimeControl&view=Totaltime', NULL, NULL, NULL, NULL, NULL)]]></sql>
+		</table>
+		<table>
+			<name>vtiger_links_seq</name>
+			<sql><![CDATA[update vtiger_links_seq set id = id+1]]></sql>
+		</table>
+		<table>
+			<name>vtiger_greentimecontrolcf</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_greentimecontrolcf` (
+			  `greentimecontrolid` int(11) NOT NULL,
+			  PRIMARY KEY (`greentimecontrolid`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

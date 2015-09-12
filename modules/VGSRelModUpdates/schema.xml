@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_vgsrelmodupdates</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_vgsrelmodupdates` (
+  `vgsrelmodupdatesid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `sourcefieldname` varchar(50) DEFAULT NULL,
+  `sourcemodule` varchar(50) DEFAULT NULL,
+  `sourcefieldvalue` varchar(150) DEFAULT NULL,
+  `targetfieldname` varchar(50) DEFAULT NULL,
+  `targetmodule` varchar(50) DEFAULT NULL,
+  `targetfieldvalue` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`vgsrelmodupdatesid`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

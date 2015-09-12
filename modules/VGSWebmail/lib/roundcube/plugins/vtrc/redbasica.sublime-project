@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+	{
+		"follow_symlinks": true,
+		"path": "."
+	}
+	],
+	"settings": {
+		"xdebug": {
+			"url": "http://localhost:8888/desarrollos/vtiger_61dev1/",
+			"break_on_exception": [
+		        // E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR
+		        "Fatal error"        
+        		],
+        		"launch_browser": true,
+        		"max_depth": 32,
+        		"pretty_output": true,
+    }
+}
+}

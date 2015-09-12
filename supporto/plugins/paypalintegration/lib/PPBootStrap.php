@@ -1,0 +1,16 @@
+<?php
+/**
+ * Include this file in your application. This file sets up the required classloader based on
+ * whether you used composer or the custom installer.
+ */
+
+// Let the SDK know where the config file resides.
+define('PP_CONFIG_PATH', dirname(__FILE__));
+
+
+if(file_exists( dirname(__FILE__). '/vendor/autoload.php')) {
+    require 'vendor/autoload.php';
+} else {
+    require ROOT_PATH.'/plugins/paypalintegration/lib/PPAutoloader.php';
+    PPAutoloader::register();
+}

@@ -1,0 +1,263 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_vgswebmail_users</name>
+			<sql><![CDATA[
+		CREATE TABLE `vtiger_vgswebmail_users` (
+		`user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+		`username` VARCHAR(128) NOT NULL COLLATE 'utf8_bin',
+		`mail_host` VARCHAR(128) NOT NULL,
+		`created` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+		`last_login` DATETIME NULL DEFAULT NULL,
+		`language` VARCHAR(5) NULL DEFAULT NULL,
+		`preferences` TEXT NULL,
+		PRIMARY KEY (`user_id`),
+		UNIQUE INDEX `username` (`username`, `mail_host`)
+		)
+		COLLATE='utf8_general_ci'
+		ENGINE=InnoDB
+		AUTO_INCREMENT=10;
+	]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_usersettings</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_usersettings` (
+  `userid` int(11) DEFAULT NULL,
+  `username` varchar(150) DEFAULT NULL,
+  `password` varchar(150) DEFAULT NULL,
+  `host` varchar(150) DEFAULT NULL,
+  `port` varchar(150) DEFAULT NULL,
+  `smtp_server` varchar(150) DEFAULT NULL,
+  `smtp_port` varchar(150) DEFAULT NULL,
+  `smtp_user` varchar(150) DEFAULT NULL,
+  `smtp_pass` varchar(150) DEFAULT NULL,
+  `vtiger_url` varchar(150) DEFAULT NULL,
+  `language` varchar(50) DEFAULT NULL,
+  `displayname` varchar(50) DEFAULT NULL,
+  `autosaveattachments` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_system</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_system` (
+`name` VARCHAR(64) NOT NULL,
+`value` MEDIUMTEXT NULL,
+PRIMARY KEY (`name`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_session</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_session` (
+`sess_id` VARCHAR(128) NOT NULL,
+`created` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`ip` VARCHAR(40) NOT NULL,
+`vars` MEDIUMTEXT NOT NULL,
+PRIMARY KEY (`sess_id`),
+INDEX `changed_index` (`changed`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_searches</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_searches` (
+`search_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+`user_id` INT(10) UNSIGNED NOT NULL,
+`type` INT(3) NOT NULL DEFAULT '0',
+`name` VARCHAR(128) NOT NULL,
+`data` TEXT NULL,
+PRIMARY KEY (`search_id`),
+UNIQUE INDEX `uniqueness` (`user_id`, `type`, `name`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_searches` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_identities</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_identities` (
+`identity_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+`user_id` INT(10) UNSIGNED NOT NULL,
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`del` TINYINT(1) NOT NULL DEFAULT '0',
+`standard` TINYINT(1) NOT NULL DEFAULT '0',
+`name` VARCHAR(128) NOT NULL,
+`organization` VARCHAR(128) NOT NULL DEFAULT '',
+`email` VARCHAR(128) NOT NULL,
+`reply-to` VARCHAR(128) NOT NULL DEFAULT '',
+`bcc` VARCHAR(128) NOT NULL DEFAULT '',
+`signature` TEXT NULL,
+`html_signature` TINYINT(1) NOT NULL DEFAULT '0',
+PRIMARY KEY (`identity_id`),
+INDEX `user_vtiger_vgswebmail_identities_index` (`user_id`, `del`),
+INDEX `email_vtiger_vgswebmail_identities_index` (`email`, `del`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_identities` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=10;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_emailtrack</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_emailtrack` (
+`vtid` VARCHAR(10) NOT NULL,
+`rcid` VARCHAR(50) NOT NULL
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_dictionary</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_dictionary` (
+`user_id` INT(10) UNSIGNED NULL DEFAULT NULL,
+`language` VARCHAR(5) NOT NULL,
+`data` LONGTEXT NOT NULL,
+UNIQUE INDEX `uniqueness` (`user_id`, `language`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_dictionary` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_contacts</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_contacts` (
+`contact_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`del` TINYINT(1) NOT NULL DEFAULT '0',
+`name` VARCHAR(128) NOT NULL DEFAULT '',
+`email` TEXT NOT NULL,
+`firstname` VARCHAR(128) NOT NULL DEFAULT '',
+`surname` VARCHAR(128) NOT NULL DEFAULT '',
+`vcard` LONGTEXT NULL,
+`words` TEXT NULL,
+`user_id` INT(10) UNSIGNED NOT NULL,
+PRIMARY KEY (`contact_id`),
+INDEX `user_vtiger_vgswebmail_contacts_index` (`user_id`, `del`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_contacts` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_contactgroups</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_contactgroups` (
+`contactgroup_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+`user_id` INT(10) UNSIGNED NOT NULL,
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`del` TINYINT(1) NOT NULL DEFAULT '0',
+`name` VARCHAR(128) NOT NULL DEFAULT '',
+PRIMARY KEY (`contactgroup_id`),
+INDEX `vtiger_vgswebmail_contactgroups_user_index` (`user_id`, `del`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_contactgroups` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_contactgroupmembers</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_contactgroupmembers` (
+`contactgroup_id` INT(10) UNSIGNED NOT NULL,
+`contact_id` INT(10) UNSIGNED NOT NULL,
+`created` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+PRIMARY KEY (`contactgroup_id`, `contact_id`),
+INDEX `vtiger_vgswebmail_contactgroupmembers_contact_index` (`contact_id`),
+CONSTRAINT `contactgroup_id_fk_vtiger_vgswebmail_contactgroups` FOREIGN KEY (`contactgroup_id`) REFERENCES `vtiger_vgswebmail_contactgroups` (`contactgroup_id`) ON UPDATE CASCADE ON DELETE CASCADE,
+CONSTRAINT `contact_id_fk_vtiger_vgswebmail_contacts` FOREIGN KEY (`contact_id`) REFERENCES `vtiger_vgswebmail_contacts` (`contact_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_cache_thread</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_cache_thread` (
+`user_id` INT(10) UNSIGNED NOT NULL,
+`mailbox` VARCHAR(255) NOT NULL COLLATE 'utf8_bin',
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`data` LONGTEXT NOT NULL,
+PRIMARY KEY (`user_id`, `mailbox`),
+INDEX `changed_index` (`changed`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_cache_thread` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_cache_messages</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_cache_messages` (
+`user_id` INT(10) UNSIGNED NOT NULL,
+`mailbox` VARCHAR(255) NOT NULL COLLATE 'utf8_bin',
+`uid` INT(11) UNSIGNED NOT NULL DEFAULT '0',
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`data` LONGTEXT NOT NULL,
+`flags` INT(11) NOT NULL DEFAULT '0',
+PRIMARY KEY (`user_id`, `mailbox`, `uid`),
+INDEX `changed_index` (`changed`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_cache_messages` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_cache</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_cache` (
+`user_id` INT(10) UNSIGNED NOT NULL,
+`vtiger_vgswebmail_cache_key` VARCHAR(128) NOT NULL COLLATE 'ascii_general_ci',
+`created` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`data` LONGTEXT NOT NULL,
+INDEX `created_index` (`created`),
+INDEX `user_vtiger_vgswebmail_cache_index` (`user_id`, `vtiger_vgswebmail_cache_key`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_cache` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+		<table>
+			<name>vtiger_vgswebmail_cache_index</name>
+			<sql><![CDATA[
+CREATE TABLE `vtiger_vgswebmail_cache_index` (
+`user_id` INT(10) UNSIGNED NOT NULL,
+`mailbox` VARCHAR(255) NOT NULL COLLATE 'utf8_bin',
+`changed` DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00',
+`valid` TINYINT(1) NOT NULL DEFAULT '0',
+`data` LONGTEXT NOT NULL,
+PRIMARY KEY (`user_id`, `mailbox`),
+INDEX `changed_index` (`changed`),
+CONSTRAINT `user_id_fk_vtiger_vgswebmail_cache_index` FOREIGN KEY (`user_id`) REFERENCES `vtiger_vgswebmail_users` (`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+]]></sql>
+		</table>
+	</tables>
+</schema>

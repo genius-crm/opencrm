@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>green_banche</name>
+			<sql><![CDATA[CREATE TABLE `green_banche` (
+  `bancheid` int(11) DEFAULT NULL,
+  `nomebanca` varchar(255) DEFAULT NULL,
+  `bancaattiva` varchar(3) DEFAULT NULL,
+  `dettaglibanca` varchar(255) DEFAULT NULL,
+  `iban` varchar(255) DEFAULT NULL,
+  `banca_no` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>green_banchecf</name>
+			<sql><![CDATA[CREATE TABLE `green_banchecf` (
+  `bancheid` int(11) NOT NULL,
+  PRIMARY KEY (`bancheid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

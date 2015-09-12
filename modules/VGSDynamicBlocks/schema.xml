@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_vgsdynamicblocks</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_vgsdynamicblocks` (
+  `vgsdynamicblocksid` int(19) NOT NULL AUTO_INCREMENT,
+  `moduleid` int(19) NOT NULL,
+  `fieldname` varchar(50) DEFAULT NULL,
+  `fieldvalue` varchar(250) DEFAULT NULL,
+  `blockid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`vgsdynamicblocksid`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>
